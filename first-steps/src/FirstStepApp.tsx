@@ -1,14 +1,12 @@
+import { ItemCounter } from "./shopping-cart/ItemCounter";
+
 export function FirstStepApp() {
     return (
         <>
-            <h1>My React App</h1>
-            <p>Esto es un parrafo</p>
-            
-            <button>click me</button>
-
-            <div>
-                <h2>Esto es un subtitulo</h2>
-            </div>
+            <h1>Carrito de compras</h1>
+            <ItemCounter name="Nintendo Switch" quantity={1} />
+            <ItemCounter name="PlayStation 5" quantity={2} />
+            <ItemCounter name="Xbox Series X" quantity={3} />
         </>
     )
 }

@@ -6,6 +6,6 @@ import { MiNombreApp } from './MiNombreApp'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <FirstStepApp />
-    <MiNombreApp />
+    {/* <MiNombreApp /> */}
   </StrictMode>,
 )
