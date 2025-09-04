@@ -1,9 +1,22 @@
+import { useState } from "react";
+
 interface ItemCounterProps{
     name: string;
     quantity?: number;
 }
 
-export const ItemCounter = ({name, quantity}: ItemCounterProps) => {
+export const ItemCounter = ({name, quantity = 1}: ItemCounterProps) => {
+
+    const [count, setCount] = useState(quantity);
+
+    const handleAdd = () => {
+        setCount(count + 1);
+    }
+
+    const handleRemove = () => {
+        if(count === 1) return;
+        setCount(count - 1);
+    }
 
     const handleClick = () => {
         console.log(`Click ${name}`);
@@ -24,11 +37,11 @@ export const ItemCounter = ({name, quantity}: ItemCounterProps) => {
                 onMouseEnter={() => {
                     console.log(`Mouse enter ${name}`);
                 }}
-                onClick={handleClick}> 
+                onClick={handleAdd}> 
                 +1 
             </button>
-            <span> {quantity} </span>
-            <button> -1 </button>
+            <span> {count} </span>
+            <button onClick={handleRemove}> -1 </button>
         </section>
     );
 };
